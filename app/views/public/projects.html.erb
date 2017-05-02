@@ -1,0 +1,30 @@
+<%# if we have local variables %>
+<% if !content.nil? && !content[:projects].empty? %>
+	<section class="project-container">
+
+		<%# For each project %>
+		<% content[:projects].each do |p| %>
+			<article class="project-card">
+
+				<%# Display the title %>
+				<p><%= p[:title] %></p>
+
+				<div>
+					<ul>
+
+					<%# For each technology %>
+					<% p[:technologies].split(',').each do |t| %>
+						<li><%= t %></li>
+					<% end %>
+
+				</ul>
+			</div>
+
+		</article>
+	<% end %>
+
+</section>
+
+<% else %>
+<p>no projects</p>
+<% end %>

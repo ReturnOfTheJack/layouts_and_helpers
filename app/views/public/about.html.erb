@@ -1,0 +1,24 @@
+<h1>Public</h1>
+
+<% if !content.nil? && !content.empty? %>
+	<%= content[0] %>
+
+	<% if @contact %>
+		<%= form_tag '#', method: :get, onsumbit: 'send()', id: 'content-form' do %>
+			<%= text_field @contact[:name], :name, id: 'name' %>
+			<%= text_field @contact[:message], :message, id: 'message' %>
+			<%= submit_tag content[1] %>
+		<% end %>
+	<% end %>
+<% end %>
+
+<%# Display images from IMAGES folder here%>
+<section>
+	<p>Image A:</p>
+	<%= image_tag 'persona_4_rise.jpg', id: 'image-a' %>
+</section>
+
+<section>
+	<p>Image B:</p>
+	<%= image_tag 'Kamen_Rider_4.jpg', id: 'image-b' %>
+</section>
